@@ -9,11 +9,6 @@ app.post('/events', async (req, res) => {
   try {
     const { data, type } = req.body;
 
-    console.log(data);
-    console.log(type);
-
-    console.log('yooo');
-
     if (type === 'CommentCreated') {
       const status = data.content.includes('orange') ? 'rejected' : 'approved';
 

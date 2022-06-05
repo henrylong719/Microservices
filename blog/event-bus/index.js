@@ -15,6 +15,6 @@ app.post('/events', (req, res) => {
   res.send(event);
 });
 
-app.listen(4003, () => {
-  console.log('Example app listening on port 4003!');
+app.listen(4005, () => {
+  console.log('Event bus listening on port 4005!');
 });

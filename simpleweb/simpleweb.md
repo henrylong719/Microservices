@@ -40,7 +40,21 @@ docker run -p 3000:8080 henrylong/simpleweb
 
 
 
+**Start a shell inside a container to debug**
 
+```bash
+# sh: reference to the shell program
+docker run -it henrylong/simpleweb sh
+```
+
+
+
+**Exec a container**
+
+```bash
+# 00629eedd8e6 container id
+docker exec -it 00629eedd8e6 sh
+```
 
 
 

@@ -94,6 +94,100 @@ Provides an easy-to-remember URL to access a running container
 
 
 
+**K8s Commands**
+
+Print out information about all of the running pods
+
+```bash
+kubectl get pods
+```
+
+
+
+Execute the given command in a running pod
+
+```bash
+kubectl exec -it [pod_name] [cmd]
+
+kubectl exec -it posts sh
+```
+
+
+
+Print out logs from the given pod
+
+```bash
+kubectl logs [pod_name]
+```
+
+
+
+Deletes the given pod
+
+```bash
+kubectl delete pod [pod_name]
+```
+
+
+
+Tells kubernetes to process the config
+
+```bash
+kubectl apply -f [config file name]
+```
+
+
+
+Print out some information about the running pod
+
+```bash
+kubectl describe pod [pad_name]
+```
+
+
+
+**Deplyment Command**
+
+List all the running deployments
+
+```bash
+kubectl get deployments
+```
+
+
+
+Print out details about a specific deployment
+
+```bash
+kubectl describe deployment [depl name]
+```
+
+
+
+Create a deployment out of a config file
+
+```bash
+kubectl apply -f [config file name]
+```
+
+
+
+Delete a deployment
+
+```bash
+kubetrl delete deployment [depl_name]
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 

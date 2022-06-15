@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: posts
-        image: henrylong/posts
+        image: henrylong719/posts
 --- 
 apiVersion: v1
 kind: Service
@@ -27,5 +27,5 @@ spec:
   ports:
   - name: posts
     protocol: TCP
-    port: 4005
-    targetPort: 4005
+    port: 4000
+    targetPort: 4000

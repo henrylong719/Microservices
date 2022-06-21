@@ -26,9 +26,13 @@
 
 
 
+## Response Normalization Startefies
 
 
-tsc --init
+
+Create `rotues` folder and add `current-user.ts`, `signin.ts`, `signout.ts`, `signup.ts`
+
+
 
 
 

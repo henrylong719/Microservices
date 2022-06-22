@@ -1,7 +1,5 @@
 
 
-
-
 ### Resource Type
 
 
@@ -31,6 +29,30 @@
 
 
 Create `rotues` folder and add `current-user.ts`, `signin.ts`, `signout.ts`, `signup.ts`
+
+Add `error-handler.ts` to `middlewares` folder
+
+Add `request-validation-error.ts` and `database-connection-error.ts` to `errors` folder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

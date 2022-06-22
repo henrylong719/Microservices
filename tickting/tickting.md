@@ -34,7 +34,7 @@ Add `error-handler.ts` to `middlewares` folder
 
 Add `request-validation-error.ts` and `database-connection-error.ts` to `errors` folder
 
-
+Add `custom-error` to `errors` folder
 
 
 

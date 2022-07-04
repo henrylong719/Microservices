@@ -25,5 +25,4 @@ router.post(
     res.send('sign up');
   }
 );
-
 export { router as signupRouter };

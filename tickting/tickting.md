@@ -38,6 +38,18 @@ Add `custom-error` to `errors` folder
 
 
 
+## Database Management and Modeling
+
+
+
+Add `auth-mongo-depl.yaml` to `k8s`
+
+Connect `mongodb` in `index.ts`
+
+
+
+
+
 
 
 

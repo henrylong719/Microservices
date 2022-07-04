@@ -1,6 +1,8 @@
 import express from 'express';
 import 'express-async-errors';
 import { json } from 'body-parser';
+import mongoose from 'mongoose';
+
 import { currentUserRouter } from './routes/current-user';
 import { signinRouter } from './routes/signin';
 import { signupRouter } from './routes/signup';
@@ -22,6 +24,16 @@ app.all('*', async () => {
 
 app.use(errorHandler);
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000 ');
-});
+const start = async () => {
+  try {
+    console.log('connect to mongodb');
+    await mongoose.connect('mongodb://auth-mongo-srv:27017/auth');
+  } catch (error) {
+    console.error(error);
+  }
+  app.listen(3000, () => {
+    console.log('Server is running on port 3000  !!!!');
+  });
+};
+
+start();

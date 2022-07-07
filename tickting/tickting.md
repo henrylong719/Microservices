@@ -52,6 +52,12 @@ Create user model under `models`
 
 Create `BadRequestError` under `errors`
 
+Create `password.ts` under `services`
+
+Add `userSchema.pre` in `user.ts` to hash password before saving
+
+
+
 
 
 

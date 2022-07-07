@@ -58,6 +58,28 @@ Add `userSchema.pre` in `user.ts` to hash password before saving
 
 
 
+## Authentication Strategies and options
+
+
+
+`npm install cookie-session @types/cookie-session `
+
+
+
+set `cookieSession` in `auth/src/index.ts`
+
+
+
+Generating a JWT
+
+`npm i jsonwebtoken`
+
+
+
+use jwt in `routes/signup.ts`
+
+
+
 
 
 

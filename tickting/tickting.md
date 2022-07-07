@@ -48,6 +48,12 @@ Connect `mongodb` in `index.ts`
 
 
 
+Create user model under `models`
+
+Create `BadRequestError` under `errors`
+
+
+
 
 
 

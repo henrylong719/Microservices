@@ -100,6 +100,20 @@ use `validateRequest` in `signin.ts` and `signup.ts`
 
 Finalize `signin.ts`
 
+Finalize `current-user.ts`
+
+Finalize `signout-ts`
+
+Create `current-user.ts` under `middleware` folder
+
+Create `require-auth.ts` under `middleware` folder
+
+Create `not-authorized-error.ts` under `errors`
+
+
+
+
+
 
 
 

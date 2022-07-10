@@ -70,17 +70,25 @@ set `cookieSession` in `auth/src/index.ts`
 
 
 
-Generating a JWT
+**Generating a JWT**
 
 `npm i jsonwebtoken`
-
-
 
 use jwt in `routes/signup.ts`
 
 
 
 
+
+**Creating and accessing Secrets**
+
+`kubectl create secret generic jet-secret --from-literal=JWT_KEY=asffu`
+
+`kubectl get secrets`
+
+Add `env` to `auth-depl`
+
+use `env` in `signup.ts`
 
 
 

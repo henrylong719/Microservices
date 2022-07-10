@@ -90,9 +90,15 @@ Add `env` to `auth-depl`
 
 use `env` in `signup.ts`
 
+add `toJSON` in `user.ts`
 
 
 
+Create `validate-request.ts` under `middlewares`
+
+use `validateRequest` in `signin.ts` and `signup.ts`
+
+Finalize `signin.ts`
 
 
 

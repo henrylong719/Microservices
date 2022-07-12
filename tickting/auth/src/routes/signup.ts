@@ -46,7 +46,7 @@ router.post(
 
     res.status(201).send(user);
 
-    console.log('Creating a user....');
+    // console.log('Creating a user....');
     // throw new DatabaseConnectionError();
 
     // res.send('sign up');

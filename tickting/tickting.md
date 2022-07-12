@@ -114,6 +114,22 @@ Create `not-authorized-error.ts` under `errors`
 
 
 
+## Testing isolated microservices
+
+create `app.ts` and seperate logic in `index.ts`
+
+run `npm install --save-dev @types/jest @types/supertest jest ts-jest supertest mongodb-memory-server`
+
+Add `script` and `jest config` in the `package.json`
+
+Create `test/setup.ts` under `src`
+
+Create `__test__/signup.test.ts`  under `routes`
+
+
+
+
+
 
 
 

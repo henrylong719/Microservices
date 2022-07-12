@@ -124,7 +124,7 @@ Add `script` and `jest config` in the `package.json`
 
 Create `test/setup.ts` under `src`
 
-Create `__test__/signup.test.ts`  under `routes`
+Create `__test__/signup.test.ts`  `signin.test.ts` `signout.test.ts` `current-user.test.ts` under `routes`
 
 
 

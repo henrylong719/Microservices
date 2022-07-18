@@ -146,13 +146,33 @@ Create `Dockerfile` and `.dockerignore`
 
 
 
+**build next docker image locally**
+
+`docker build -t henrylong719/client .`
+
+` docker push henrylong719/client`
 
 
 
+**Running Next in Kubernetes**
+
+Create `client-depl.yaml`
+
+Modify `skaffold.yaml`
+
+Modify `ingress-src.yaml`
 
 
 
+**Note on file change detection**
 
+Create `next.config.js`
+
+`k get pods`
+
+` k delete pod client-depl-6d5c7ccd69-zxlql`
+
+`k get pods`
 
 
 

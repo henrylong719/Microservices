@@ -126,9 +126,23 @@ Create `test/setup.ts` under `src`
 
 Create `__test__/signup.test.ts`  `signin.test.ts` `signout.test.ts` `current-user.test.ts` under `routes`
 
+add `global.signin` in `setup.ts`
 
 
 
+## Integrating a Server-Side-Rendered React App
+
+
+
+create `client` folder and `npm init -y`
+
+`npm i react react-dom next`
+
+add `scripts` in `package.json`
+
+
+
+Create `Dockerfile` and `.dockerignore`
 
 
 

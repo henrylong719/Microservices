@@ -44,7 +44,6 @@ const signup = () => {
         />
       </div>
       {errors}
-
       <button className="btn btn-primary">Sign Up</button>
     </form>
   );

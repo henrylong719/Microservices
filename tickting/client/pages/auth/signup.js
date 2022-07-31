@@ -21,8 +21,6 @@ const signup = () => {
     await doRequest();
   };
 
-  console.log(errors);
-
   return (
     <form onSubmit={onSubmit}>
       <h1>Sign up</h1>

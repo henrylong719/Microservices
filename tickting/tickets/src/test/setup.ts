@@ -1,7 +1,5 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
-import { app } from '../app';
-import request from 'supertest';
 import jwt from 'jsonwebtoken';
 
 let mongo: any;
@@ -13,7 +11,7 @@ beforeAll(async () => {
   process.env.JWT_KEY = 'asdfasdf';
   mongo = await MongoMemoryServer.create();
   const mongoUri = mongo.getUri();
-  await mongoose.connect(mongoUri, {});
+  await mongoose.connect(mongoUri);
 });
 
 beforeEach(async () => {
@@ -24,10 +22,10 @@ beforeEach(async () => {
 });
 
 afterAll(async () => {
+  await mongoose.connection.close();
   if (mongo) {
     await mongo.stop();
   }
-  await mongoose.connection.close();
 });
 
 global.signin = () => {

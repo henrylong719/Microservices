@@ -68,9 +68,11 @@ it('returns a 400 if the user provides an invalid title or price', async () => {
 });
 
 it('returns a 200 if the user own the ticket', async () => {
+  const cookie = global.signin();
+
   const response = await request(app)
     .post('/api/tickets')
-    .set('Cookie', global.signin())
+    .set('Cookie', cookie)
     .send({
       title: 'concert',
       price: 20,
@@ -79,7 +81,7 @@ it('returns a 200 if the user own the ticket', async () => {
 
   await request(app)
     .put(`/api/tickets/${response.body.id}`)
-    .set('Cookie', global.signin())
+    .set('Cookie', cookie)
     .send({
       title: 'new concert',
       price: 100,

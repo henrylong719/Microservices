@@ -180,7 +180,13 @@ Create `next.config.js`
 
 
 
+## NATS Steaming Server
 
+
+
+1. create `nats-depl.yaml` under `infra/k8s`
+2. create service in `nats-depl.yaml`
+3. 
 
 
 

@@ -14,13 +14,15 @@ spec:
     spec:
       containers:
         - name: nats
-          image: nats-steaming:0.17.0
+          image: nats-streaming:0.17.0
           args: [
             '-p',
             '4222',
             '-m',
             '8222',
             '-hbi',
+            '5s',
+            '-hbt',
             '5s',
             '-hbf',
             '2',

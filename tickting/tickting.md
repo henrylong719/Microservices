@@ -186,7 +186,7 @@ Create `next.config.js`
 
 1. create `nats-depl.yaml` under `infra/k8s`
 2. create service in `nats-depl.yaml`
-3. 
+3. run `k get pots` to see if **nats steaming server** is running
 
 
 

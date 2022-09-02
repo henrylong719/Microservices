@@ -1,7 +1,15 @@
-import { requireAuth, validateRequest } from '@hltickets/common';
+import {
+  BadRequestError,
+  NotFoundError,
+  OrderStatus,
+  requireAuth,
+  validateRequest,
+} from '@hltickets/common';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
 import mongoose from 'mongoose';
+import { Order } from '../models/order';
+import { Ticket } from '../models/ticket';
 
 const router = express.Router();
 
@@ -18,6 +26,19 @@ router.post(
   validateRequest,
 
   async (req: Request, res: Response) => {
+    const { ticketId } = req.body;
+
+    const ticket = await Ticket.findById(ticketId);
+    if (!ticket) {
+      throw new NotFoundError();
+    }
+
+    const isReserved = await ticket.isReserved();
+
+    if (isReserved) {
+      throw new BadRequestError('Ticket is already reserved');
+    }
+
     res.send({});
   }
 );

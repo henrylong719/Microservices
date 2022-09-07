@@ -5,13 +5,13 @@ import {
   requireAuth,
   validateRequest,
 } from '@hltickets/common';
-import express, { Request, Response } from 'express';
-import { body } from 'express-validator';
 import mongoose from 'mongoose';
-import { OrderCreatedPublisher } from '../events/publishers/order-created-publisher';
 import { Order } from '../models/order';
+import { body } from 'express-validator';
 import { Ticket } from '../models/ticket';
 import { natsWrapper } from '../nats-wrapper';
+import express, { Request, Response } from 'express';
+import { OrderCreatedPublisher } from '../events/publishers/order-created-publisher';
 
 const router = express.Router();
 const EXPIRATION_WINDOW_SECONDS = 15 * 60;

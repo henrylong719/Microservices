@@ -291,10 +291,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@hltickets/common@^1.0.7":
-  "integrity" "sha512-gBO0/HSqIpDUhuEDRD6FEPjaGbh4DcnbNcxA0v9IEpHTUbJHLQjW5NTbdKf022sE3cWw9bQhdlNlTlPiIn+tng=="
-  "resolved" "https://registry.npmjs.org/@hltickets/common/-/common-1.0.7.tgz"
-  "version" "1.0.7"
+"@hltickets/common@^1.0.8":
+  "integrity" "sha512-+TunV9H75mgYib/NsUWxIEshvKnve3jk3b+CfJL0NLUb53V9hsm9lishkt04vE8PumI0ehI3j05H4Lrkadbx3A=="
+  "resolved" "https://registry.npmjs.org/@hltickets/common/-/common-1.0.8.tgz"
+  "version" "1.0.8"
   dependencies:
     "@types/cookie-session" "^2.0.44"
     "@types/express" "^4.17.13"

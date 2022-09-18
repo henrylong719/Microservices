@@ -4,6 +4,7 @@ import {
   validateRequest,
   NotFoundError,
   NotAuthorizedError,
+  BadRequestError,
 } from '@hltickets/common';
 import { body } from 'express-validator';
 import { Ticket } from '../models/ticket';
@@ -33,6 +34,10 @@ router.put(
 
     if (ticket.userId !== req.currentUser!.id) {
       throw new NotAuthorizedError();
+    }
+
+    if (ticket.orderId) {
+      throw new BadRequestError('Cannot edit a reserved ticket');
     }
 
     ticket.set({ title, price });

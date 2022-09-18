@@ -198,3 +198,25 @@ Create `next.config.js`
 
 
 
+1. Build docker image
+
+   `docker build -t henrylong719/expiration .`
+
+2. Push to docker hub
+
+   `docker push henrylong719/expiration`
+
+3. Create deploy file under infra/k8s
+
+​		`expiration-redis-depl.yaml`
+
+​		`expiration-depl.yaml`
+
+4. add expiration service to `skaffold.yaml`
+
+   
+
+
+
+
+

@@ -194,7 +194,7 @@ Create `next.config.js`
 
 
 
-
+## Create expiration service
 
 
 
@@ -216,7 +216,31 @@ Create `next.config.js`
 
    
 
+## Create payments service
 
+1. Build payments docker image
+
+   `docker build -t henrylong719/payments .  `
+
+2. Push to docker hub
+
+   `docker push henrylong719/payments`
+
+3. Create deploy file under infra/k8s
+
+   `payments-depl.yaml`
+
+   `payments-mongo-depl.yaml`
+
+4. add payments service to `skaffold.yaml`
+
+   
+
+   
+
+   
+
+   
 
 
 

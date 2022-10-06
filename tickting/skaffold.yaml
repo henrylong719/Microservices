@@ -48,4 +48,12 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    - image: henrylong719/payments
+      context: payments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
             

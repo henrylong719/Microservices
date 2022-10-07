@@ -4,6 +4,9 @@ import jwt from 'jsonwebtoken';
 
 jest.mock('../nats-wrapper');
 
+process.env.STRIPE_KEY =
+  'sk_test_51KyFebLgJrMjoB51Seyd5PHngXoZknmHgJm6i9F24CHdgEtBEq3UltPU4WTBy2HwQiP9PijbVw2Tsep31PnNieJ900W8HbI9Ri';
+
 let mongo: any;
 declare global {
   var signin: (id?: string) => string[];

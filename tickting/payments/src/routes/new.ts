@@ -8,6 +8,7 @@ import {
 } from '@hltickets/common';
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
+import { stripe } from '../stripe';
 import { Order } from '../models/order';
 
 const router = express.Router();
@@ -34,7 +35,13 @@ router.post(
       throw new BadRequestError('Cannot pay for an cancelled order');
     }
 
-    res.send({ success: true });
+    await stripe.charges.create({
+      currency: 'usd',
+      amount: order.price * 100,
+      source: token,
+    });
+
+    res.status(201).send({ success: true });
   }
 );
 

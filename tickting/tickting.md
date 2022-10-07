@@ -214,7 +214,7 @@ Create `next.config.js`
 
 4. add expiration service to `skaffold.yaml`
 
-   
+
 
 ## Create payments service
 
@@ -236,11 +236,22 @@ Create `next.config.js`
 
    
 
-   
+## Create secret stripe-key
 
-   
+1. `k create secret generic stripe-secret --from-literal STRIPE_KEY=...`
+2. ` k get secrets   `
+3. add `STRIPE_KEY` in the `payments-depl.yaml`
+4. 
 
-   
+
+
+
+
+
+
+
+
+
 
 
 

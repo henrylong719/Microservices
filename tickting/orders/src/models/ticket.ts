@@ -68,6 +68,13 @@ ticketSchema.methods.isReserved = async function () {
   // Run query to look at all orders. Find an order where the ticket
   // is the ticket we just found *and* the orders status is *not* cancelled.
   // If we find an order from that means the ticket *is* reserved
+
+  const order = await Order.findOne({
+    ticket: this,
+  });
+
+  console.log(order);
+
   const existingOrder = await Order.findOne({
     ticket: this,
     status: {

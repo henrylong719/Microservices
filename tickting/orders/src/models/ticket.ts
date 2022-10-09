@@ -48,6 +48,12 @@ const ticketSchema = new mongoose.Schema(
 ticketSchema.set('versionKey', 'version');
 ticketSchema.plugin(updateIfCurrentPlugin);
 
+ticketSchema.statics.findByEvent = (event: { id: string; version: number }) => {
+  return Ticket.findOne({
+    _id: event.id,
+    version: event.version - 1,
+  });
+};
 ticketSchema.statics.build = (attrs: TicketAttrs) => {
   return new Ticket({
     _id: attrs.id,
@@ -55,28 +61,10 @@ ticketSchema.statics.build = (attrs: TicketAttrs) => {
     price: attrs.price,
   });
 };
-
-ticketSchema.statics.findByEvent = (event: { id: string; version: number }) => {
-  return Ticket.findOne({
-    _id: event.id,
-    version: event.version - 1,
-  });
-};
-
 ticketSchema.methods.isReserved = async function () {
   // this === the ticket document that we just called 'isReserved' on
-  // Run query to look at all orders. Find an order where the ticket
-  // is the ticket we just found *and* the orders status is *not* cancelled.
-  // If we find an order from that means the ticket *is* reserved
-
-  const order = await Order.findOne({
-    ticket: this,
-  });
-
-  console.log(order);
-
   const existingOrder = await Order.findOne({
-    ticket: this,
+    ticket: this as any,
     status: {
       $in: [
         OrderStatus.Created,

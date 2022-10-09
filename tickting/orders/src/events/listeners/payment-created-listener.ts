@@ -1,12 +1,12 @@
 import {
-  Listener,
-  OrderStatus,
-  PaymentCreatedEvent,
   Subjects,
+  Listener,
+  PaymentCreatedEvent,
+  OrderStatus,
 } from '@hltickets/common';
 import { Message } from 'node-nats-streaming';
-import { Order } from '../../models/order';
 import { queueGroupName } from './queue-group-name';
+import { Order } from '../../models/order';
 
 export class PaymentCreatedListener extends Listener<PaymentCreatedEvent> {
   subject: Subjects.PaymentCreated = Subjects.PaymentCreated;
@@ -19,8 +19,9 @@ export class PaymentCreatedListener extends Listener<PaymentCreatedEvent> {
       throw new Error('Order not found');
     }
 
-    order.set({ status: OrderStatus.Complete });
-
+    order.set({
+      status: OrderStatus.Complete,
+    });
     await order.save();
 
     msg.ack();

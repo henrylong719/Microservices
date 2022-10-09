@@ -1,9 +1,9 @@
-import {
-  NotAuthorizedError,
-  NotFoundError,
-  requireAuth,
-} from '@hltickets/common';
 import express, { Request, Response } from 'express';
+import {
+  requireAuth,
+  NotFoundError,
+  NotAuthorizedError,
+} from '@hltickets/common';
 import { Order } from '../models/order';
 
 const router = express.Router();
@@ -17,7 +17,6 @@ router.get(
     if (!order) {
       throw new NotFoundError();
     }
-
     if (order.userId !== req.currentUser!.id) {
       throw new NotAuthorizedError();
     }
